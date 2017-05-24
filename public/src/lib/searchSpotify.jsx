@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default searchSpotify = (type, query) => {
+const searchSpotify = (type, query) => {
   data = {
     q: query,
     type: type,
@@ -16,3 +16,5 @@ export default searchSpotify = (type, query) => {
     console.log(err);
   });
 };
+
+export default searchSpotify;
