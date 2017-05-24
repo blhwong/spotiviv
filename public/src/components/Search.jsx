@@ -7,8 +7,8 @@ export default class Search extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange() {
-    console.log('hi');
+  handleChange(e) {
+    this.props.searchSpotify(this.props.type, e.target.value);
   }
 
   render() {
