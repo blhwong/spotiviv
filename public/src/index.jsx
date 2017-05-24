@@ -20,4 +20,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App searchSpotify={searchSpotify}/>, document.getElementById('app'));
+ReactDOM.render(<App searchSpotify={_.debounce(searchSpotify, 500)}/>, document.getElementById('app'));
