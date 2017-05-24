@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Search from './components/Search.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,11 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>Hello World!</div>
+      <div>
+        <div>Hello World!</div>
+        <Search type="Artist"/>
+        <Search type="Album"/>
+      </div>
     );
   }
 }
