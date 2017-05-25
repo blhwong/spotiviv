@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ResultListEntry from './ResultListEntry.jsx';
 import { Button } from 'react-bootstrap';
+import './ResultList.css';
 
 export default class ResultList extends Component {
   constructor(props) {
@@ -21,9 +22,19 @@ export default class ResultList extends Component {
       <div>
         <h2>{entries && 'Result List'}</h2>
         <span>
-          <h3>{entries && type}{entries && type !== 'Albums' && <Button bsStyle="success" onClick={() => this.handleClick(type)}>Sort by popularity: {this.props.ascending ? 'Ascending' : 'Descending'}</Button>}</h3>
-
-
+          <h3>
+            {entries && type}
+            {entries && type !== 'Albums'
+            &&
+            <Button
+              className="button"
+              bsStyle="success"
+              onClick={() => this.handleClick(type)}
+            >
+            Sort by popularity: {this.props.ascending ? 'Ascending' : 'Descending'}
+            </Button>
+            }
+          </h3>
         </span>
         {entries && entries.items.map((entry, index) => {
           return (
