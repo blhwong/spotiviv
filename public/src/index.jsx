@@ -12,7 +12,8 @@ class App extends React.Component {
       entries: {},
       artist: '',
       album: '',
-      track: ''
+      track: '',
+      ascending: false
     };
     this.setEntries = this.setEntries.bind(this);
     this.setValue = this.setValue.bind(this);
@@ -86,7 +87,10 @@ class App extends React.Component {
           value={this.state.track}
           setValue={this.setValue}
         />
-        <ResultList entries={this.state.entries}/>
+        <ResultList
+          entries={this.state.entries}
+          ascending={this.state.ascending}
+        />
       </div>
     );
   }
