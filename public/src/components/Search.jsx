@@ -13,7 +13,7 @@ export default class Search extends Component {
     this.props.searchSpotify(this.props.type, e.target.value, this.props.setEntries);
   }
 
-  handleClear() {
+  handleClear(e) {
     console.log(this.props);
     this.props.setValue(null, this.props.type, true);
   }
@@ -21,7 +21,7 @@ export default class Search extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
             name={this.props.type}
