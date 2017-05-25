@@ -34,6 +34,11 @@ class App extends React.Component {
           searchSpotify={this.props.searchSpotify}
           setEntries={this.setEntries}
         />
+        <Search
+          type="Track"
+          searchSpotify={this.props.searchSpotify}
+          setEntries={this.setEntries}
+        />
         <ResultList entries={this.state.entries}/>
       </div>
     );
