@@ -8,7 +8,11 @@ const ResultList = (props) => {
   return (
     <div>
       <h2>{entries && 'Result List'}</h2>
-      <h3>{entries && type}</h3>
+      <span>
+        <h3>{entries && type}{entries && type !== 'Albums' && <button>Sort by popularity:</button>}</h3>
+
+
+      </span>
       {entries && entries.items.map((entry, index) => {
         return (
           <ResultListEntry
