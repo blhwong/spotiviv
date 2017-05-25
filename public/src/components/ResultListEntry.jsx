@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './ResultListEntry.css';
 const ResultListEntry = (props) => {
   console.log(props);
   let img;
@@ -12,11 +12,11 @@ const ResultListEntry = (props) => {
   let name = props.entry.name;
   let popularity = props.entry.popularity;
   return (
-    <div>
+    <div className="entry">
       <img src={img}></img>
       <div>
         <a href={url}>{name}</a>
-        {popularity !== undefined && <div>Popularity: {popularity}</div>}
+        {popularity !== undefined && <h4>Popularity: {popularity}</h4>}
       </div>
     </div>
   );

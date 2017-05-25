@@ -106,7 +106,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="container">
-        <h1>spotiviv</h1>
+        <h1 className="title">spotiviv</h1>
         <Search
           type="Artist"
           searchSpotify={this.props.searchSpotify}
