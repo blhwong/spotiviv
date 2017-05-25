@@ -23,9 +23,7 @@ export default class Search extends Component {
     return (
       <div>
         <form onSubmit={(e) => e.preventDefault()}>
-          <FormGroup
-            controlId="formBasicText"
-          >
+          <FormGroup controlId="formBasicText">
             <FormControl
               type="text"
               name={this.props.type}
@@ -34,17 +32,7 @@ export default class Search extends Component {
               value={this.props.value}
               onClick={this.handleClear}
             />
-
           </FormGroup>
-          <input
-            type="text"
-            name={this.props.type}
-            placeholder={this.props.type}
-            onChange={this.handleChange}
-            value={this.props.value}
-            onClick={this.handleClear}
-          >
-          </input>
         </form>
       </div>
     );
