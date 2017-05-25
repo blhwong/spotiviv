@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const searchSpotify = (type, query) => {
+const searchSpotify = (type, query, cb) => {
   let data = {
     q: query,
     type: type,
@@ -10,6 +10,7 @@ const searchSpotify = (type, query) => {
   .then((results) => {
     console.log('Success!');
     console.log(results);
+    cb(results);
   })
   .catch((err) => {
     console.log('Error...');
