@@ -13,7 +13,7 @@ class App extends React.Component {
     console.log(this.props);
     return (
       <div>
-        <h1>Spotiviv</h1>
+        <h1>spotiviv</h1>
         <Search type="Artist" searchSpotify={this.props.searchSpotify}/>
         <Search type="Album" searchSpotify={this.props.searchSpotify}/>
       </div>
