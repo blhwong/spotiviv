@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Search from './components/Search.jsx';
 import searchSpotify from './lib/searchSpotify.jsx';
+import _ from 'lodash';
 
 class App extends React.Component {
   constructor(props) {
