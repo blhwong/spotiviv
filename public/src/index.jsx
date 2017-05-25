@@ -9,15 +9,56 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      entries: {}
+      entries: {},
+      artist: '',
+      album: '',
+      track: ''
     };
     this.setEntries = this.setEntries.bind(this);
+    this.setValue = this.setValue.bind(this);
   }
 
   setEntries(entries) {
     this.setState({
       entries: entries
     });
+  }
+
+  setValue(e, type, clear) {
+    if (type === 'Artist') {
+      if (clear) {
+        this.setState({
+          album: '',
+          track: ''
+        });
+      } else {
+        this.setState({
+          artist: e.target.value,
+        });
+      }
+    } else if (type === 'Album') {
+      if (clear) {
+        this.setState({
+          artist: '',
+          track: ''
+        });
+      } else {
+        this.setState({
+          album: e.target.value
+        });
+      }
+    } else {
+      if (clear) {
+        this.setState({
+          artist: '',
+          album: ''
+        });
+      } else {
+        this.setState({
+          track: e.target.value
+        });
+      }
+    }
   }
 
   render () {
@@ -28,16 +69,22 @@ class App extends React.Component {
           type="Artist"
           searchSpotify={this.props.searchSpotify}
           setEntries={this.setEntries}
+          value={this.state.artist}
+          setValue={this.setValue}
         />
         <Search
           type="Album"
           searchSpotify={this.props.searchSpotify}
           setEntries={this.setEntries}
+          value={this.state.album}
+          setValue={this.setValue}
         />
         <Search
           type="Track"
           searchSpotify={this.props.searchSpotify}
           setEntries={this.setEntries}
+          value={this.state.track}
+          setValue={this.setValue}
         />
         <ResultList entries={this.state.entries}/>
       </div>
