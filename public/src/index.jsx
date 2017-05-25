@@ -5,6 +5,7 @@ import searchSpotify from './lib/searchSpotify.jsx';
 import _ from 'lodash';
 import ResultList from './components/ResultList.jsx';
 import 'bootstrap/less/bootstrap.less';
+import './index.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -104,7 +105,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="container">
         <h1>spotiviv</h1>
         <Search
           type="Artist"
