@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 const searchSpotify = (type, query, cb) => {
+  if (!query.length) {
+    return;
+  }
   let data = {
     q: query,
     type: type,
@@ -10,7 +13,7 @@ const searchSpotify = (type, query, cb) => {
   .then((results) => {
     console.log('Success!');
     console.log(results);
-    cb(results);
+    cb(results.data);
   })
   .catch((err) => {
     console.log('Error...');
