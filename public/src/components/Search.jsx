@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormControl, FormGroup } from 'react-bootstrap';
 
 export default class Search extends Component {
 
@@ -22,6 +23,19 @@ export default class Search extends Component {
     return (
       <div>
         <form onSubmit={(e) => e.preventDefault()}>
+          <FormGroup
+            controlId="formBasicText"
+          >
+            <FormControl
+              type="text"
+              name={this.props.type}
+              placeholder={this.props.type}
+              onChange={this.handleChange}
+              value={this.props.value}
+              onClick={this.handleClear}
+            />
+
+          </FormGroup>
           <input
             type="text"
             name={this.props.type}

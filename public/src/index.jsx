@@ -4,6 +4,7 @@ import Search from './components/Search.jsx';
 import searchSpotify from './lib/searchSpotify.jsx';
 import _ from 'lodash';
 import ResultList from './components/ResultList.jsx';
+import 'bootstrap/less/bootstrap.less';
 
 class App extends React.Component {
   constructor(props) {
