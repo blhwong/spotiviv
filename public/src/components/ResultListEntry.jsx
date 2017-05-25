@@ -1,7 +1,6 @@
 import React from 'react';
 import './ResultListEntry.css';
 const ResultListEntry = (props) => {
-  console.log(props);
   let img;
   if (props.type === 'Tracks') {
     img = props.entry.album.images[2].url;

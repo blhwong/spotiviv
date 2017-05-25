@@ -11,13 +11,10 @@ const searchSpotify = (type, query, cb) => {
   };
   axios.get('https://api.spotify.com/v1/search', {params: data})
   .then((results) => {
-    console.log('Success!');
-    console.log(results);
     cb(results.data);
   })
   .catch((err) => {
-    console.log('Error...');
-    console.log(err);
+    console.error(err);
   });
 };
 

@@ -66,7 +66,6 @@ class App extends React.Component {
   }
 
   sortEntries(type) {
-    console.log('sorting...');
     let entries;
     if (type === 'Artists') {
       entries = this.state.entries.artists;
@@ -80,8 +79,6 @@ class App extends React.Component {
         return b.popularity - a.popularity;
       }
     });
-    console.log(sorted);
-    console.log(this.state);
     if (type === 'Artists') {
       this.setState({
         entries: {

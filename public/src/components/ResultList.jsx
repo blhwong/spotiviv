@@ -10,12 +10,10 @@ export default class ResultList extends Component {
   }
 
   handleClick(type) {
-    console.log('click');
     this.props.sortEntries(type);
   }
 
   render() {
-    console.log(this.props);
     let entries = this.props.entries.artists || this.props.entries.albums || this.props.entries.tracks || null;
     let type = this.props.entries.artists ? 'Artists' : (this.props.entries.albums ? 'Albums' : 'Tracks');
     return (

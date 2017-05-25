@@ -15,7 +15,6 @@ export default class Search extends Component {
   }
 
   handleClear(e) {
-    console.log(this.props);
     this.props.setValue(null, this.props.type, true);
   }
 
