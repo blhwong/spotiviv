@@ -63,8 +63,42 @@ class App extends React.Component {
     }
   }
 
-  sortEntries() {
+  sortEntries(type) {
     console.log('sorting...');
+    let entries;
+    if (type === 'Artists') {
+      entries = this.state.entries.artists;
+    } else {
+      entries = this.state.entries.tracks;
+    }
+    let sorted = entries.items.sort((a, b) => {
+      if (this.state.ascending) {
+        return a.popularity - b.popularity;
+      } else {
+        return b.popularity - a.popularity;
+      }
+    });
+    console.log(sorted);
+    console.log(this.state);
+    if (type === 'Artists') {
+      this.setState({
+        entries: {
+          artists: {
+            items: sorted
+          }
+        },
+        ascending: !this.state.ascending
+      });
+    } else {
+      this.setState({
+        entries: {
+          tracks: {
+            items: sorted
+          }
+        },
+        ascending: !this.state.ascending
+      });
+    }
   }
 
   render () {

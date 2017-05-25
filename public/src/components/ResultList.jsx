@@ -7,9 +7,9 @@ export default class ResultList extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(type) {
     console.log('click');
-    this.props.sortEntries();
+    this.props.sortEntries(type);
   }
 
   render() {
@@ -20,7 +20,7 @@ export default class ResultList extends Component {
       <div>
         <h2>{entries && 'Result List'}</h2>
         <span>
-          <h3>{entries && type}{entries && type !== 'Albums' && <button onClick={this.handleClick}>Sort by popularity: {this.props.ascending ? 'Descending' : 'Ascending'}</button>}</h3>
+          <h3>{entries && type}{entries && type !== 'Albums' && <button onClick={() => this.handleClick(type)}>Sort by popularity: {this.props.ascending ? 'Ascending' : 'Descending'}</button>}</h3>
 
 
         </span>
