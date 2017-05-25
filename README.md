@@ -1,7 +1,7 @@
 # spotiviv
 Music Track Search
 
-![](./docs/File12.png)
+![](./docs/1.png)
 
 Use spotiviv to search your favorite artists, albums, tracks. Sort the artists and tracks by popularity!
 
