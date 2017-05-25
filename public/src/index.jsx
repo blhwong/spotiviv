@@ -17,6 +17,7 @@ class App extends React.Component {
     };
     this.setEntries = this.setEntries.bind(this);
     this.setValue = this.setValue.bind(this);
+    this.sortEntries = this.sortEntries.bind(this);
   }
 
   setEntries(entries) {
@@ -62,6 +63,10 @@ class App extends React.Component {
     }
   }
 
+  sortEntries() {
+    console.log('sorting...');
+  }
+
   render () {
     return (
       <div>
@@ -90,6 +95,7 @@ class App extends React.Component {
         <ResultList
           entries={this.state.entries}
           ascending={this.state.ascending}
+          sortEntries={this.sortEntries}
         />
       </div>
     );
