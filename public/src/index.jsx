@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      entries: []
+      entries: {}
     };
     this.setEntries = this.setEntries.bind(this);
   }
