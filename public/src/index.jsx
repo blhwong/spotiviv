@@ -21,19 +21,18 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     return (
       <div>
         <h1>spotiviv</h1>
         <Search
           type="Artist"
           searchSpotify={this.props.searchSpotify}
-          setEntries={this.props.setEntries}
+          setEntries={this.setEntries}
         />
         <Search
           type="Album"
           searchSpotify={this.props.searchSpotify}
-          setEntries={this.props.setEntries}
+          setEntries={this.setEntries}
         />
         <ResultList entries={this.state.entries}/>
       </div>
