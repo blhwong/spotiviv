@@ -16,7 +16,7 @@ const ResultListEntry = (props) => {
       <img src={img}></img>
       <div>
         <a href={url}>{name}</a>
-        {popularity && <div>Popularity: {popularity}</div>}
+        {popularity !== undefined && <div>Popularity: {popularity}</div>}
       </div>
     </div>
   );
