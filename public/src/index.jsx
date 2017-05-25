@@ -3,10 +3,21 @@ import ReactDOM from 'react-dom';
 import Search from './components/Search.jsx';
 import searchSpotify from './lib/searchSpotify.jsx';
 import _ from 'lodash';
+import ResultList from './components/ResultList.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      entries: []
+    };
+    this.setEntries = this.setEntries.bind(this);
+  }
+
+  setEntries(entries) {
+    this.setState({
+      entries: entries
+    });
   }
 
   render () {
@@ -14,8 +25,17 @@ class App extends React.Component {
     return (
       <div>
         <h1>spotiviv</h1>
-        <Search type="Artist" searchSpotify={this.props.searchSpotify}/>
-        <Search type="Album" searchSpotify={this.props.searchSpotify}/>
+        <Search
+          type="Artist"
+          searchSpotify={this.props.searchSpotify}
+          setEntries={this.props.setEntries}
+        />
+        <Search
+          type="Album"
+          searchSpotify={this.props.searchSpotify}
+          setEntries={this.props.setEntries}
+        />
+        <ResultList entries={this.state.entries}/>
       </div>
     );
   }
