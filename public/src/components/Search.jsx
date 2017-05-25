@@ -8,7 +8,7 @@ export default class Search extends Component {
   }
 
   handleChange(e) {
-    this.props.searchSpotify(this.props.type, e.target.value);
+    this.props.searchSpotify(this.props.type, e.target.value, this.props.setEntries);
   }
 
   render() {
